@@ -26,19 +26,6 @@
   background-color: #9e9ea0;
 }
 
-/*Chaves de frames p/ animações*/
-@keyframes entering-profile {
-  /*animacao da entrada da pagina de perfil*/
-  from {
-    opacity: 0;
-    transform: translateY(-500px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /*Corpo da página*/
 body {
   background-color: #121215;
@@ -69,6 +56,20 @@ aside {
   background-size: auto 100%;
 }
 
+/*Chaves de frames p/ animações*/
+/*Animação da entrada*/
+@keyframes entering-profile {
+  /*animacao da entrada da pagina de perfil*/
+  from {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 aside * {
   animation: entering-profile 1s ease-in-out;
 }
@@ -95,7 +96,7 @@ aside span {
   text-align: center;
 }
 
-/*entrada*/
+/*animação da entrada*/
 @keyframes entering-timeline {
   /*animacao da entrada da pagina de timline*/
   from {
@@ -150,8 +151,6 @@ nav {
   height: 280px;
   border-radius: 10px; /*borda redonda*/
   object-fit: cover; /*deixar imagem escondida no fundo ao invés de encolher*/
-
-  transition: transform 0.3s ease-in-out;
 }
 
 .memory img:hover {
