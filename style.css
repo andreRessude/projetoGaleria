@@ -201,6 +201,10 @@ nav {
   animation: header-animation 2.5s ease-in-out;
 }
 
+.albums div{
+  padding: 32px;
+}
+
 @keyframes articleFooter-animation {
   from {
     opacity: 0;
