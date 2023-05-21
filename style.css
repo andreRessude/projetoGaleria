@@ -166,7 +166,7 @@ nav {
   line-height: 28px; /*espaçamento de linhas*/
 }
 
-/*body de cada album*/
+/*body dos álbuns*/
 .albums {
   display: flex;
   flex-direction: column;
