@@ -185,9 +185,11 @@ nav {
 @keyframes header-animation {
   from {
     opacity: 0;
+    transform: translateY(-500px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -196,16 +198,16 @@ nav {
   text-align: center;
   width: 100%;
   padding: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 0px;
 
-  animation: header-animation 2.5s ease-in-out;
+  animation: header-animation 1.5s ease-in-out;
 }
 
 .albums div{
   padding: 32px;
 }
 
-@keyframes articleFooter-animation {
+@keyframes foto-animation {
   from {
     opacity: 0;
     transform: translateY(500px);
@@ -225,25 +227,20 @@ nav {
   align-items: center;
   gap: 32px;
 
-  animation: articleFooter-animation 2.5s ease-in-out;
+  animation: foto-animation 1.5s ease-in-out;
 }
 
+/*organização das imagens na página*/
 .foto article {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
+/*data da imagem*/
 .foto small {
   color: #727275;
   font-size: 0.75rem;
-}
-
-.foto div {
-  width: 100%;
-  height: 250px;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .foto img {
@@ -258,33 +255,43 @@ nav {
   text-align: center;
 }
 
-/*Rodapé*/
-.albums footer {
-  font-size: 1.2rem;
-  width: 100%;
-  height: 32px;
-  padding: 16px;
-  margin: 16px;
-  text-align: left;
-
-  animation: articleFooter-animation 2.5s ease-in-out;
+/*Animação do botão "voltar"/rodapé*/
+@keyframes voltar-animation{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
+.albums footer{
+  margin: 32px;
+}
+
+/*Botão "voltar"/rodapé*/
 .albums footer a {
+  font-size: 1.2rem;
   color: #eaeaea;
+  background-color: #727275;
   text-decoration: none;
   border-radius: 8px;
-  bottom: 0px;
-  position: fixed;
-  width: 15%;
-  text-align: center;
-  margin: 16px;
-  padding: 12px;
+
+  padding: 14px 20px;
+  left: 32px; /*distância da lateral esquerda*/
+  bottom: 32px; /*distância da base*/
+  position: fixed;  /*botão fixo na tela*/
+
+  animation: voltar-animation 2.5s ease-in-out;
+  transition: entering-footer 0.8s ease-in-out; /*efeito de entrada do botão*/
+  transition: transform 0.1s ease-in; /*efeito de ampliar botão ao passar mouse por cima*/
 }
 
+/*efeito de ampliar botão ao passar mouse por cima*/
 footer a:hover {
   background-color: #eaeaea;
   color: #121215;
+  transform: scale(1.1);/*ampliar numa escala 1.1*/
 }
 
 /*Visualização em dispositivos menores*/
@@ -300,6 +307,7 @@ footer a:hover {
     grid-template-areas:
       "profile"
       "timeline";
+    background-size: 100%;    
   }
 
   aside {
@@ -310,5 +318,15 @@ footer a:hover {
   nav {
     overflow-y: visible;
     padding: 22px;
+  }
+
+  .albums div{
+    padding: 16px;
+  }
+
+  .albums footer a{
+    left: 16px;
+    bottom: 16px;
+    padding: 10px 15px;
   }
 }
